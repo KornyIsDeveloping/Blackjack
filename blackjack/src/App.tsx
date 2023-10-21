@@ -1,14 +1,17 @@
-import { useState } from 'react'
-import './App.css'
+// import { useState } from 'react'
+import MainMenu from './gameMenu/MainMenu'
+import './BlackJackGame.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+function BlackjackGame() {
 
   return (
     <>
-      
+      <div className="app">
+        <h1><span>B</span>lack<span>j</span>ack</h1>
+          <MainMenu />
+      </div> 
     </>
   )
 }
 
-export default App
+export default BlackjackGame
