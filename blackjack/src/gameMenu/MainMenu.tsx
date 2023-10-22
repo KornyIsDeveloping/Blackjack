@@ -208,6 +208,51 @@ const StyledMenuButtons = styled(Button)({
   }
 });
 
+//styling the back button from rule and about game menu on smaller devices
+const BackButtonFromSmallDevices = styled(StyledMenuButtons)({
+   //extra small phone view (prtrait)
+   '@media (min-width: 375px) and (max-width: 576px)': {
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto'
+  },
+
+  //phone view
+  '@media(min-width: 577px) and (max-width: 768px)': {
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto'
+   }, 
+
+   //tablet view
+  '@media(min-width: 769px) and (max-width: 993px)': {
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto'
+  },
+
+  //desktop view
+  '@media(min-width: 994px) and (max-width: 1200px)': {
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto'
+  },
+
+  //large desktop view
+  '@media (min-width: 1201px) and (max-width: 1400px)': {
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto'
+  },
+
+  //extra lerge desktop view
+  '@media (min-width: 1401px) and (max-width: 1900px)': {
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto'
+  }
+});
+
 //styling the h1 (Title)
 const GameTitle = styled('h1')({
   //extra small phone view (prtrait)
@@ -335,27 +380,37 @@ const RulesContainer = styled('div')({
 
   //phone view
   '@media(min-width: 577px) and (max-width: 768px)': {
-
+    padding: '25px',
+    maxHeight: '80vh',
+    overflowY: 'auto'
   }, 
   
   //tablet view
   '@media(min-width: 769px) and (max-width: 993px)': {
-
+    padding: '25px',
+    maxHeight: '80vh',
+    overflowY: 'auto'
   },
 
   //desktop view
   '@media(min-width: 994px) and (max-width: 1200px)': {
-
+    padding: '25px',
+    maxHeight: '80vh',
+    overflowY: 'auto'
   },
 
   //large desktop view
   '@media (min-width: 1201px) and (max-width: 1400px)': {
-
+    padding: '25px',
+    maxHeight: '80vh',
+    overflowY: 'auto'
   },
 
   //extra lerge desktop view
   '@media (min-width: 1401px) and (max-width: 1900px)': {
-
+    padding: '25px',
+    maxHeight: '80vh',
+    overflowY: 'auto'
   }
 });
 
@@ -371,27 +426,42 @@ const RulesMenuText = styled('p')({
   
   //phone view
   '@media(min-width: 577px) and (max-width: 768px)': {
-  
+    fontSize: '1.5rem',
+    marginBottom: '15px',
+    lineHeight: '1.5',
+    color: '#fde3a8'
   }, 
     
   //tablet view
   '@media(min-width: 769px) and (max-width: 993px)': {
-  
+    fontSize: '1.5rem',
+    marginBottom: '15px',
+    lineHeight: '1.5',
+    color: '#fde3a8'
   },
   
   //desktop view
   '@media(min-width: 994px) and (max-width: 1200px)': {
-  
+    fontSize: '1.6rem',
+    marginBottom: '15px',
+    lineHeight: '1.5',
+    color: '#fde3a8'
   },
   
   //large desktop view
   '@media (min-width: 1201px) and (max-width: 1400px)': {
-  
-  },
+    fontSize: '1.6rem',
+    marginBottom: '15px',
+    lineHeight: '1.5',
+    color: '#fde3a8'
+  },  
   
   //extra lerge desktop view
   '@media (min-width: 1401px) and (max-width: 1900px)': {
-  
+    fontSize: '1.6rem',
+    marginBottom: '15px',
+    lineHeight: '1.5',
+    color: '#fde3a8'
   }
 });
 
@@ -404,16 +474,26 @@ const ButtonWithTooltip = styled(StyledMenuButtons)({
   }
 });
 
-//defining the type for the props (modifying the game title when the rules menu is displayed)
+//defining the type for the props (modifying the game title when the rules and about menus are displayed)
 type GameTitleProps = {
   small?: boolean
 };
 
+type GameSubtitleProps = {
+  small?: boolean
+}
+
+//creating the game title changing font in the rules and about menus
 const GameTitleForMenus = styled('h1')<GameTitleProps>(({ small }) => ({
   color: '#fde3a8',
-  fontSize: small ? '3rem' : '2.5rem',
+  fontSize: small ? '3.6rem' : '2.5rem',
   marginTop: small ? '30px' : '50px',
-  // ... other styles
+}));
+
+const GameSubtitleForMenus = styled('h2')<GameSubtitleProps>(({ small }) => ({
+  color: '#fde3a8',
+  fontSize: small ? '1.3rem' : '2.5rem',
+  marginTop: small ? '10px' : '50px',
 }));
 
 const MainMenu: React.FC = () => {
@@ -436,9 +516,20 @@ const MainMenu: React.FC = () => {
         <HighlightedLetter>j</HighlightedLetter>ack
       </GameTitle>
       )}
+
+
+      {isRulesMenuActive ? (
+      <GameSubtitleForMenus small={isRulesMenuActive}>
+        <HighlightedSubtitle>- </HighlightedSubtitle><em>Play it wise!</em><HighlightedSubtitle> -</HighlightedSubtitle>
+      </GameSubtitleForMenus>
+      ) : (
       <GameSubtitle>
         <HighlightedSubtitle>- </HighlightedSubtitle><em>Play it wise!</em><HighlightedSubtitle> -</HighlightedSubtitle>
       </GameSubtitle>
+      )}
+      {/* <GameSubtitle>
+        <HighlightedSubtitle>- </HighlightedSubtitle><em>Play it wise!</em><HighlightedSubtitle> -</HighlightedSubtitle>
+      </GameSubtitle> */}
       {isPlayMenuClicked && !isRulesClicked ? (
         //the menu that shows up after the play buttons is clicked
         <>
@@ -472,10 +563,10 @@ const MainMenu: React.FC = () => {
         <RulesMenuText><em>There is no limit on how many cards can you ask for, but once your hand totals more than <HighlightedLetter>21 </HighlightedLetter>you <HighlightedLetter>BUST </HighlightedLetter>
         and the <HighlightedLetter>dealer </HighlightedLetter>gets your bet.</em></RulesMenuText>
         <RulesMenuText><em>Once the round is over all of the players place a new bet and another round begins.</em> <HighlightedLetter>ENJOY!</HighlightedLetter></RulesMenuText>
-        <StyledMenuButtons variant="outlined" onClick={() => {
+        <BackButtonFromSmallDevices variant="outlined" onClick={() => {
           setIsRulesClicked(false);
           setIsRulesMenuActive(false); 
-        }}>Back</StyledMenuButtons>
+        }}>Back</BackButtonFromSmallDevices>
       </RulesContainer>
       ) : (
         //the main menu
