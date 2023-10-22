@@ -208,7 +208,7 @@ const StyledMenuButtons = styled(Button)({
   }
 });
 
-//styleing the h1 (Title)
+//styling the h1 (Title)
 const GameTitle = styled('h1')({
   //extra small phone view (prtrait)
   '@media (min-width: 375px) and (max-width: 576px)': {
@@ -247,7 +247,7 @@ const GameTitle = styled('h1')({
   }
 });
 
-//styleing the h2 (Subtitle)
+//styling the h2 (Subtitle)
 const GameSubtitle = styled('h2')({
   //extra small phone view (prtrait)
   '@media (min-width: 375px) and (max-width: 576px)': {
@@ -324,6 +324,75 @@ const Tooltip = styled('span')({
   transition: 'opacity 0.3s'
 });
 
+//styling the rules menu container
+const RulesContainer = styled('div')({
+  //extra small phone view (prtrait)
+  '@media (min-width: 375px) and (max-width: 576px)': {  
+    padding: '25px',
+  },
+
+  //phone view
+  '@media(min-width: 577px) and (max-width: 768px)': {
+
+  }, 
+  
+  //tablet view
+  '@media(min-width: 769px) and (max-width: 993px)': {
+
+  },
+
+  //desktop view
+  '@media(min-width: 994px) and (max-width: 1200px)': {
+
+  },
+
+  //large desktop view
+  '@media (min-width: 1201px) and (max-width: 1400px)': {
+
+  },
+
+  //extra lerge desktop view
+  '@media (min-width: 1401px) and (max-width: 1900px)': {
+
+  }
+});
+
+//styling the text used in rules menu
+const RulesMenuText = styled('p')({
+  //extra small phone view (prtrait)
+  '@media (min-width: 375px) and (max-width: 576px)': {  
+    fontSize: '1.2rem',
+    marginBottom: '15px',
+    lineHeight: '1.5',
+    color: '#fde3a8'
+  },
+  
+  //phone view
+  '@media(min-width: 577px) and (max-width: 768px)': {
+  
+  }, 
+    
+  //tablet view
+  '@media(min-width: 769px) and (max-width: 993px)': {
+  
+  },
+  
+  //desktop view
+  '@media(min-width: 994px) and (max-width: 1200px)': {
+  
+  },
+  
+  //large desktop view
+  '@media (min-width: 1201px) and (max-width: 1400px)': {
+  
+  },
+  
+  //extra lerge desktop view
+  '@media (min-width: 1401px) and (max-width: 1900px)': {
+  
+  }
+});
+
 //button with tooltip (multiplayer button)
 const ButtonWithTooltip = styled(StyledMenuButtons)({
   position: 'relative',
@@ -339,7 +408,8 @@ type GameTitleProps = {
 };
 
 const GameTitleForMenus = styled('h1')<GameTitleProps>(({ small }) => ({
-  fontSize: small ? '2rem' : '2.5rem',
+  color: '#fde3a8',
+  fontSize: small ? '3rem' : '2.5rem',
   marginTop: small ? '30px' : '50px',
   // ... other styles
 }));
@@ -379,15 +449,25 @@ const MainMenu: React.FC = () => {
         </>
       ) : !isPlayMenuClicked && isRulesClicked ? (
         // display the game rules and the back button
-      <div>
-        <p>Here are the rules for newbies...but even for experimented players can be helpfull to!</p>
-        <p>Rule 1: ...</p>
-        <p>Rule 2: ...</p>
+      <RulesContainer>
+        <RulesMenuText>Here are the <HighlightedLetter>rules</HighlightedLetter> for newbies...but even for experimented players can be helpfull too!</RulesMenuText>
+        <RulesMenuText><em>The <HighlightedLetter>Blackjack</HighlightedLetter> game is played with a deck of <HighlightedLetter>52</HighlightedLetter> cards.
+          When the game starts everyone place a bet. The <HighlightedLetter>dealer </HighlightedLetter>delas <HighlightedLetter>1 </HighlightedLetter>
+          card faced up to each player, and <HighlightedLetter>1</HighlightedLetter> card faced up to themselves.</em></RulesMenuText>
+        <RulesMenuText><em>One more card faced up for the players, besides the <HighlightedLetter>dealer's </HighlightedLetter>one, 
+        his second card is faced down.</em></RulesMenuText>
+        <RulesMenuText>Rule 2: ...</RulesMenuText>
+        <RulesMenuText>Rule 2: ...</RulesMenuText>
+        <RulesMenuText>Rule 2: ...</RulesMenuText>
+        <RulesMenuText>Rule 2: ...</RulesMenuText>
+        <RulesMenuText>Rule 2: ...</RulesMenuText>
+        <RulesMenuText>Rule 2: ...</RulesMenuText>
+        <RulesMenuText>Rule 2: ...</RulesMenuText>
         <StyledMenuButtons variant="outlined" onClick={() => {
           setIsRulesClicked(false);
           setIsRulesMenuActive(false); 
         }}>Back</StyledMenuButtons>
-      </div>
+      </RulesContainer>
       ) : (
         //the main menu
         <>
