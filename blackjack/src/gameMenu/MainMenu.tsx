@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react' //react hook useState
 import { Button } from '@mui/material'
 import { styled } from '@mui/system'
 
@@ -304,6 +304,8 @@ const HighlightedSubtitle = styled('span')({
 });
 
 const MainMenu: React.FC = () => {
+  //this state will determine if the main menu is displayed or if the play menu is displayed
+  const [isPlayMenuClicked, setIsPlayMenuClicked] = useState(false); //toggle between main menu and play menu
   return (
     //my styled components GameMenu which holds the buttons, GameTitle and GameSubtitle
     <GameMenuContainer>
@@ -314,11 +316,32 @@ const MainMenu: React.FC = () => {
       <GameSubtitle>
         <HighlightedSubtitle>- </HighlightedSubtitle><em>Play it wise!</em><HighlightedSubtitle> -</HighlightedSubtitle>
       </GameSubtitle>
+      {isPlayMenuClicked ? (
+        //the menu that shows up after the play buttons is clicked
+        <>
       <ButtonContainer>
-        <StyledMenuButtons variant="outlined">Play</StyledMenuButtons> 
+        <StyledMenuButtons variant="outlined">Singleplayer</StyledMenuButtons> 
+        <StyledMenuButtons variant="outlined">Multiplayer</StyledMenuButtons>
+        {/* just switching between true or false value for setIsPlayMenuClicked */}
+        <StyledMenuButtons variant="outlined" onClick={() => setIsPlayMenuClicked(false)}>Back</StyledMenuButtons> 
+      </ButtonContainer>
+        </>
+      ) : (
+        //the main menu
+        <>
+      <ButtonContainer>
+        {/* adding the onClick event on each button from the main menu */}
+        <StyledMenuButtons variant="outlined" onClick={() => setIsPlayMenuClicked(true)}>Play</StyledMenuButtons> 
         <StyledMenuButtons variant="outlined">Rules</StyledMenuButtons>
         <StyledMenuButtons variant="outlined">About Game</StyledMenuButtons>
       </ButtonContainer>
+        </>
+      )}
+      {/* <ButtonContainer>
+        <StyledMenuButtons variant="outlined">Play</StyledMenuButtons> 
+        <StyledMenuButtons variant="outlined">Rules</StyledMenuButtons>
+        <StyledMenuButtons variant="outlined">About Game</StyledMenuButtons>
+      </ButtonContainer> */}
     </GameMenuContainer>
   );
 }
