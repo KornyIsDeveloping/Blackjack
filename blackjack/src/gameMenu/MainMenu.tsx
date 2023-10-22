@@ -329,6 +329,8 @@ const RulesContainer = styled('div')({
   //extra small phone view (prtrait)
   '@media (min-width: 375px) and (max-width: 576px)': {  
     padding: '25px',
+    maxHeight: '80vh',
+    overflowY: 'auto'
   },
 
   //phone view
@@ -456,13 +458,20 @@ const MainMenu: React.FC = () => {
           card faced up to each player, and <HighlightedLetter>1</HighlightedLetter> card faced up to themselves.</em></RulesMenuText>
         <RulesMenuText><em>One more card faced up for the players, besides the <HighlightedLetter>dealer's </HighlightedLetter>one, 
         his second card is faced down.</em></RulesMenuText>
-        <RulesMenuText>Rule 2: ...</RulesMenuText>
-        <RulesMenuText>Rule 2: ...</RulesMenuText>
-        <RulesMenuText>Rule 2: ...</RulesMenuText>
-        <RulesMenuText>Rule 2: ...</RulesMenuText>
-        <RulesMenuText>Rule 2: ...</RulesMenuText>
-        <RulesMenuText>Rule 2: ...</RulesMenuText>
-        <RulesMenuText>Rule 2: ...</RulesMenuText>
+        <RulesMenuText><em>Once the <HighlightedLetter>dealer </HighlightedLetter>has gone around the table, they will flip thier faced down card.</em></RulesMenuText>
+        <RulesMenuText><HighlightedLetter>&#9827;&#9827;&#9827;&#9827; </HighlightedLetter>How to keep track of the score?<HighlightedLetter> &#9827;&#9827;&#9827;&#9827;</HighlightedLetter></RulesMenuText>
+        <RulesMenuText><em>If your hand sums more than <HighlightedLetter>21 </HighlightedLetter>is called <HighlightedLetter>BUST</HighlightedLetter>, and you are out of the game this round.</em></RulesMenuText>
+        <RulesMenuText><em>If your <HighlightedLetter>2 </HighlightedLetter>faced up cards total <HighlightedLetter>21 </HighlightedLetter>
+        you automatically win <HighlightedLetter>ONE AND A HALF TIMES YOUR BET FROM THE DEALER </HighlightedLetter>and you are done for that round. Otherwise the <HighlightedLetter>dealer </HighlightedLetter>
+        asks whether you want another card from the top of the deck. If you want one say <HighlightedLetter>HIT</HighlightedLetter>, if you don't want any more cards say <HighlightedLetter>STAY</HighlightedLetter>.</em></RulesMenuText>
+        <RulesMenuText><em>If the <HighlightedLetter>dealer's </HighlightedLetter>hand sums <HighlightedLetter>16 </HighlightedLetter>or less, he must draw another card. Otherwise if his 
+        hand sums <HighlightedLetter>17 </HighlightedLetter>or heighter, he must stay with his hand.</em></RulesMenuText>
+        <RulesMenuText><em>If the <HighlightedLetter>dealer BUSTS</HighlightedLetter> every player that's still in that round <HighlightedLetter>WINS TWICE HIS BET</HighlightedLetter>. 
+        However if the <HighlightedLetter>dealer </HighlightedLetter>doesn't <HighlightedLetter>BUSTS </HighlightedLetter>only the players whose hands sums more that the 
+        <HighlightedLetter> dealer's </HighlightedLetter>WIN TWICE THEIR BET </em>everyone else loses their initial bet.</RulesMenuText>
+        <RulesMenuText><em>There is no limit on how many cards can you ask for, but once your hand totals more than <HighlightedLetter>21 </HighlightedLetter>you <HighlightedLetter>BUST </HighlightedLetter>
+        and the <HighlightedLetter>dealer </HighlightedLetter>gets your bet.</em></RulesMenuText>
+        <RulesMenuText><em>Once the round is over all of the players place a new bet and another round begins.</em> <HighlightedLetter>ENJOY!</HighlightedLetter></RulesMenuText>
         <StyledMenuButtons variant="outlined" onClick={() => {
           setIsRulesClicked(false);
           setIsRulesMenuActive(false); 
