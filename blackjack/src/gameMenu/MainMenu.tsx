@@ -1,4 +1,6 @@
 import React, { useState } from 'react' //react hook useState
+// import { CSSTransition } from 'react-transition-group';
+import './MainMenu.css';
 import { Button } from '@mui/material'
 import { styled } from '@mui/system'
 
@@ -130,7 +132,7 @@ const StyledMenuButtons = styled(Button)({
       },
   },
 
-    //phone view
+  //phone view
   '@media(min-width: 577px) and (max-width: 768px)': {
     textTransform: 'none',
     margin: '20px 0',
@@ -144,6 +146,7 @@ const StyledMenuButtons = styled(Button)({
         borderColor: '#fde3a8',
       },
    },
+
   //tablet view
   '@media(min-width: 769px) and (max-width: 993px)': {
     textTransform: 'none',
@@ -253,7 +256,7 @@ const GameSubtitle = styled('h2')({
     letterSpacing: '2px',
     color: '#fde3a8'
   },
-
+  //phone view
   '@media(min-width: 577px) and (max-width: 768px)': {
     fontSize: '1.2rem',
     marginBottom: '1rem',
@@ -303,6 +306,33 @@ const HighlightedSubtitle = styled('span')({
   color: '#96281b'
 });
 
+//tooltip for the multiplayer button
+const Tooltip = styled('span')({
+  visibility: 'hidden',
+  backgroundColor: 'transparent',
+  color: '#fde3a8',
+  textAlign: 'center',
+  padding: '4px 12px',
+  borderRadius: '6px',
+  position: 'absolute',
+  zIndex: 1,
+  top: '100%', 
+  left: '35%',
+  marginTop: '10px',
+  marginLeft: '-60px',
+  opacity: 1,
+  transition: 'opacity 0.3s'
+});
+
+//button with tooltip (multiplayer button)
+const ButtonWithTooltip = styled(StyledMenuButtons)({
+  position: 'relative',
+  '&:hover span': {
+    visibility: 'visible',
+    opacity: 1
+  }
+});
+
 const MainMenu: React.FC = () => {
   //this state will determine if the main menu is displayed or if the play menu is displayed
   const [isPlayMenuClicked, setIsPlayMenuClicked] = useState(false); //toggle between main menu and play menu
@@ -321,7 +351,7 @@ const MainMenu: React.FC = () => {
         <>
       <ButtonContainer>
         <StyledMenuButtons variant="outlined">Singleplayer</StyledMenuButtons> 
-        <StyledMenuButtons variant="outlined">Multiplayer</StyledMenuButtons>
+        <ButtonWithTooltip variant="outlined">Multiplayer<Tooltip>Feature coming soon!</Tooltip></ButtonWithTooltip>
         {/* just switching between true or false value for setIsPlayMenuClicked */}
         <StyledMenuButtons variant="outlined" onClick={() => setIsPlayMenuClicked(false)}>Back</StyledMenuButtons> 
       </ButtonContainer>
@@ -337,11 +367,6 @@ const MainMenu: React.FC = () => {
       </ButtonContainer>
         </>
       )}
-      {/* <ButtonContainer>
-        <StyledMenuButtons variant="outlined">Play</StyledMenuButtons> 
-        <StyledMenuButtons variant="outlined">Rules</StyledMenuButtons>
-        <StyledMenuButtons variant="outlined">About Game</StyledMenuButtons>
-      </ButtonContainer> */}
     </GameMenuContainer>
   );
 }
