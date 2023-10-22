@@ -5,8 +5,18 @@ import { styled } from '@mui/system'
 //I choosed the styled utility because is dynamic based on props and I found it more flexible  
 //styling the entire game container
 const GameMenuContainer = styled('div')({
+  //extra small phone view (prtrait)
+  '@media (min-width: 375px) and (max-width: 576px)': {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100vh',
+    background: '#2d3e50' 
+  },
+
    //phone view
-  '@media(min-width: 576px) and (max-width: 768px)': {
+  '@media(min-width: 577px) and (max-width: 768px)': {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -46,7 +56,7 @@ const GameMenuContainer = styled('div')({
   },
 
   //extra lerge desktop view
-  '@media (min-width: 1400px) and (max-width: 1900px)': {
+  '@media (min-width: 1401px) and (max-width: 1900px)': {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -58,12 +68,20 @@ const GameMenuContainer = styled('div')({
 
 //styling the button container to display buttons inline on with > 768 
 const ButtonContainer = styled('div')({
-  //phone view
-  '@media(min-width: 576px) and (max-width: 768px)': {
+  //extra small phone view (prtrait)
+  '@media (min-width: 375px) and (max-width: 576px)': {
     display: 'flex',
     flexDirection: 'column',
     alignItem: 'center',
-    gap: '10px'
+    gap: '1px'
+  },
+
+  //phone view
+  '@media(min-width: 577px) and (max-width: 768px)': {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItem: 'center',
+    gap: '5px'
   },
 
    //tablet view
@@ -88,7 +106,7 @@ const ButtonContainer = styled('div')({
   },
 
   //extra lerge desktop view
-  '@media (min-width: 1400px) and (max-width: 1900px)': {
+  '@media (min-width: 1401px) and (max-width: 1900px)': {
     display: 'flex',
     justifyContent: 'center',
     gap: '30px'
@@ -97,8 +115,23 @@ const ButtonContainer = styled('div')({
 
 //styling buttons from menu
 const StyledMenuButtons = styled(Button)({
+  //extra small phone view (prtrait)
+  '@media (min-width: 375px) and (max-width: 576px)': {
+    textTransform: 'none',
+    margin: '20px 0',
+    padding: '10px 30px',
+    width: '200px',
+    fontSize: '1rem',
+    textAlign: 'center',
+    color: '#fde3a8',
+    borderColor: '#fde3a8',
+      '&:hover': {
+        borderColor: '#fde3a8',
+      },
+  },
+
     //phone view
-  '@media(min-width: 576px) and (max-width: 768px)': {
+  '@media(min-width: 577px) and (max-width: 768px)': {
     textTransform: 'none',
     margin: '20px 0',
     padding: '10px 30px',
@@ -157,7 +190,7 @@ const StyledMenuButtons = styled(Button)({
   },
 
   //extra lerge desktop view
-  '@media (min-width: 1400px) and (max-width: 1900px)': {
+  '@media (min-width: 1401px) and (max-width: 1900px)': {
     textTransform: 'none',
     margin: '20px 0',
     padding: '10px 30px',
@@ -174,8 +207,14 @@ const StyledMenuButtons = styled(Button)({
 
 //styleing the h1 (Title)
 const GameTitle = styled('h1')({
+  //extra small phone view (prtrait)
+  '@media (min-width: 375px) and (max-width: 576px)': {
+    fontSize: '4.5rem',
+    color: '#fde3a8'
+  },
+
   //phone view
-  '@media(min-width: 576px) and (max-width: 768px)': {
+  '@media(min-width: 577px) and (max-width: 768px)': {
     fontSize: '5rem',
     color: '#fde3a8'
   },
@@ -199,7 +238,7 @@ const GameTitle = styled('h1')({
   },
 
   //extra lerge desktop view
-  '@media (min-width: 1400px) and (max-width: 1900px)': {
+  '@media (min-width: 1401px) and (max-width: 1900px)': {
     fontSize: '9rem',
     color: '#fde3a8'
   }
@@ -207,7 +246,15 @@ const GameTitle = styled('h1')({
 
 //styleing the h2 (Subtitle)
 const GameSubtitle = styled('h2')({
-  '@media(min-width: 576px) and (max-width: 768px)': {
+  //extra small phone view (prtrait)
+  '@media (min-width: 375px) and (max-width: 576px)': {
+    fontSize: '1rem',
+    marginBottom: '1rem',
+    letterSpacing: '2px',
+    color: '#fde3a8'
+  },
+
+  '@media(min-width: 577px) and (max-width: 768px)': {
     fontSize: '1.2rem',
     marginBottom: '1rem',
     letterSpacing: '2px',
@@ -239,7 +286,7 @@ const GameSubtitle = styled('h2')({
   },
 
   //extra lerge desktop view
-  '@media (min-width: 1400px) and (max-width: 1900px)': {
+  '@media (min-width: 1401px) and (max-width: 1900px)': {
     fontSize: '1.8rem',
     marginBottom: '1rem',
     letterSpacing: '6px',
