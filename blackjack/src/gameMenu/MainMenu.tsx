@@ -1,8 +1,8 @@
 import React, { useState } from 'react' //react hook useState
 // import { CSSTransition } from 'react-transition-group';
-import './MainMenu.css';
 import { Button } from '@mui/material'
 import { styled } from '@mui/system'
+import './MainMenu.css';
 
 //I choosed the styled utility because is dynamic based on props and I found it more flexible  
 //styling the entire game container
@@ -375,7 +375,17 @@ const RulesContainer = styled('div')({
   '@media (min-width: 375px) and (max-width: 576px)': {  
     padding: '25px',
     maxHeight: '80vh',
-    overflowY: 'auto'
+    overflowY: 'auto',
+    '&::-webkit-scrollbar': {
+      width: '3px',
+    },
+    '&::-webkit-scrollbar-thumb': {
+      backgroundColor: '#fde3a8',
+      borderRadius: '4px',
+    },
+    '&::-webkit-scrollbar-track': {
+      backgroundColor: '#333',
+    }
   },
 
   //phone view
@@ -501,6 +511,7 @@ const MainMenu: React.FC = () => {
   const [isPlayMenuClicked, setIsPlayMenuClicked] = useState(false); //toggle between main menu and play menu
   const [isRulesClicked, setIsRulesClicked] = useState(false);
   const [isRulesMenuActive, setIsRulesMenuActive] = useState(false); //toggle between rule menu tue/false for changing the title and subtitle size
+  const [isAboutMenuClicked, setIsAboutMenuClicked] = useState(false);
 
   return (
     //my styled components GameMenu which holds the buttons, GameTitle and GameSubtitle
