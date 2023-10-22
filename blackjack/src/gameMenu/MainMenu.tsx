@@ -333,20 +333,41 @@ const ButtonWithTooltip = styled(StyledMenuButtons)({
   }
 });
 
+//defining the type for the props (modifying the game title when the rules menu is displayed)
+type GameTitleProps = {
+  small?: boolean
+};
+
+const GameTitleForMenus = styled('h1')<GameTitleProps>(({ small }) => ({
+  fontSize: small ? '2rem' : '2.5rem',
+  marginTop: small ? '30px' : '50px',
+  // ... other styles
+}));
+
 const MainMenu: React.FC = () => {
   //this state will determine if the main menu is displayed or if the play menu is displayed
   const [isPlayMenuClicked, setIsPlayMenuClicked] = useState(false); //toggle between main menu and play menu
+  const [isRulesClicked, setIsRulesClicked] = useState(false);
+  const [isRulesMenuActive, setIsRulesMenuActive] = useState(false); //toggle between rule menu tue/false for changing the title and subtitle size
+
   return (
     //my styled components GameMenu which holds the buttons, GameTitle and GameSubtitle
     <GameMenuContainer>
+      {isRulesMenuActive ? (
+      <GameTitleForMenus small={isRulesMenuActive}>
+        <HighlightedLetter>B</HighlightedLetter>lack
+        <HighlightedLetter>j</HighlightedLetter>ack
+      </GameTitleForMenus>
+      ) : (
       <GameTitle>
         <HighlightedLetter>B</HighlightedLetter>lack
         <HighlightedLetter>j</HighlightedLetter>ack
       </GameTitle>
+      )}
       <GameSubtitle>
         <HighlightedSubtitle>- </HighlightedSubtitle><em>Play it wise!</em><HighlightedSubtitle> -</HighlightedSubtitle>
       </GameSubtitle>
-      {isPlayMenuClicked ? (
+      {isPlayMenuClicked && !isRulesClicked ? (
         //the menu that shows up after the play buttons is clicked
         <>
       <ButtonContainer>
@@ -356,13 +377,27 @@ const MainMenu: React.FC = () => {
         <StyledMenuButtons variant="outlined" onClick={() => setIsPlayMenuClicked(false)}>Back</StyledMenuButtons> 
       </ButtonContainer>
         </>
+      ) : !isPlayMenuClicked && isRulesClicked ? (
+        // display the game rules and the back button
+      <div>
+        <p>Here are the rules for newbies...but even for experimented players can be helpfull to!</p>
+        <p>Rule 1: ...</p>
+        <p>Rule 2: ...</p>
+        <StyledMenuButtons variant="outlined" onClick={() => {
+          setIsRulesClicked(false);
+          setIsRulesMenuActive(false); 
+        }}>Back</StyledMenuButtons>
+      </div>
       ) : (
         //the main menu
         <>
       <ButtonContainer>
         {/* adding the onClick event on each button from the main menu */}
         <StyledMenuButtons variant="outlined" onClick={() => setIsPlayMenuClicked(true)}>Play</StyledMenuButtons> 
-        <StyledMenuButtons variant="outlined">Rules</StyledMenuButtons>
+        <StyledMenuButtons variant="outlined" onClick={() => {
+          setIsRulesClicked(true);
+          setIsRulesMenuActive(true);
+        }}>Rules</StyledMenuButtons>
         <StyledMenuButtons variant="outlined">About Game</StyledMenuButtons>
       </ButtonContainer>
         </>
