@@ -48,6 +48,11 @@ const SinglePlayerModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                         fontSize: '2.4rem',
                         color: '#fde3a8'
                     },
+
+                    '& span': {
+                        color: '#96281b'
+                    },
+
                     '& h4': {
                         fontFamily: '"PT Sans Narrow", sans-serif',
                         fontSize: '1.4rem',
@@ -84,10 +89,10 @@ const SinglePlayerModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                 }}
             >
                 <Typography id="modal-modal-title" variant="h6" component="h2">
-                    Are you ready? Enter your name!
+                    Are you <span>ready</span>? Enter your name!
                 </Typography>
                 <Typography id="modal-modal-title" variant="body2" component="h4">
-                    <em>- If you don't feel lucky, just click outside this pop-up to exist.</em>
+                    <em>If you don't feel lucky, just click outside this pop-up to exist.</em>
                 </Typography>
                 <input
                     type="text"
@@ -103,7 +108,7 @@ const SinglePlayerModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                         fontSize: '16px',
                         marginTop: '20px',
                         marginBottom: '20px',
-                        backgroundColor: '#fde6b1'
+                        backgroundColor: '#fde6b1',
                     }}
                 />
                 <button onClick={HandleStartGame}>Start</button>
