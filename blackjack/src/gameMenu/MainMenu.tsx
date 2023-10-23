@@ -645,10 +645,8 @@ const MainMenu: React.FC = () => {
           <RulesMenuText>Here are the <HighlightedLetter>rules</HighlightedLetter> for newbies...but even for experimented players can be helpfull too!</RulesMenuText>
           <RulesMenuText><em>The <HighlightedLetter>Blackjack</HighlightedLetter> game is played with a deck of <HighlightedLetter>52</HighlightedLetter> cards.
             When the game starts everyone place a bet. The <HighlightedLetter>dealer </HighlightedLetter>delas <HighlightedLetter>1 </HighlightedLetter>
-            card faced up to each player, and <HighlightedLetter>1</HighlightedLetter> card faced up to themselves.</em></RulesMenuText>
-          <RulesMenuText><em>One more card faced up for the players, besides the <HighlightedLetter>dealer's </HighlightedLetter>one,
-            his second card is faced down.</em></RulesMenuText>
-          <RulesMenuText><em>Once the <HighlightedLetter>dealer </HighlightedLetter>has gone around the table, they will flip thier faced down card.</em></RulesMenuText>
+            card faced up to each player, and <HighlightedLetter>1</HighlightedLetter> card faced up to themselves. One more card faced up for the players, besides the <HighlightedLetter>dealer's </HighlightedLetter>one,
+            his second card is faced down. Once the <HighlightedLetter>dealer </HighlightedLetter>has gone around the table, they will flip thier faced down card.</em></RulesMenuText>
           <RulesMenuText><HighlightedLetter>&#9827;&#9827;&#9827;&#9827; </HighlightedLetter>How to keep track of the score?<HighlightedLetter> &#9827;&#9827;&#9827;&#9827;</HighlightedLetter></RulesMenuText>
           <RulesMenuText><em>If your hand sums more than <HighlightedLetter>21 </HighlightedLetter>is called <HighlightedLetter>BUST</HighlightedLetter>, and you are out of the game this round.</em></RulesMenuText>
           <RulesMenuText><em>If your <HighlightedLetter>2 </HighlightedLetter>faced up cards total <HighlightedLetter>21 </HighlightedLetter>
@@ -658,9 +656,8 @@ const MainMenu: React.FC = () => {
             hand sums <HighlightedLetter>17 </HighlightedLetter>or heighter, he must stay with his hand.</em></RulesMenuText>
           <RulesMenuText><em>If the <HighlightedLetter>dealer BUSTS</HighlightedLetter> every player that's still in that round <HighlightedLetter>WINS TWICE HIS BET</HighlightedLetter>.
             However if the <HighlightedLetter>dealer </HighlightedLetter>doesn't <HighlightedLetter>BUSTS </HighlightedLetter>only the players whose hands sums more that the
-            <HighlightedLetter> dealer's </HighlightedLetter>WIN TWICE THEIR BET </em>everyone else loses their initial bet.</RulesMenuText>
-          <RulesMenuText><em>There is no limit on how many cards can you ask for, but once your hand totals more than <HighlightedLetter>21 </HighlightedLetter>you <HighlightedLetter>BUST </HighlightedLetter>
-            and the <HighlightedLetter>dealer </HighlightedLetter>gets your bet.</em></RulesMenuText>
+            <HighlightedLetter> dealer's </HighlightedLetter>WIN TWICE THEIR BET </em>everyone else loses their initial bet. There is no limit on how many cards can you ask for, but once your hand totals more than <HighlightedLetter>21 </HighlightedLetter>you <HighlightedLetter>BUST </HighlightedLetter>
+            and the <HighlightedLetter>dealer </HighlightedLetter>gets your bet.</RulesMenuText>
           <RulesMenuText><em>Once the round is over all of the players place a new bet and another round begins.</em> <HighlightedLetter>ENJOY!</HighlightedLetter></RulesMenuText>
           <BackButtonFromSmallDevices variant="outlined" onClick={() => {
             setIsRulesClicked(false);
@@ -672,19 +669,17 @@ const MainMenu: React.FC = () => {
         <AboutContainer>
           <AboutMenuText>Hello there <HighlightedLetter>gambler</HighlightedLetter>, I'm Mr. Blacky, make yourself confortable and let me indroduce you to this card game named <HighlightedLetter>Blackjack </HighlightedLetter>,
           as known as <HighlightedLetter>21'</HighlightedLetter>.</AboutMenuText>
-          <AboutMenuText><em>biciclentiu calul meu iese din padure tagadam tagadam tagadam calul meuuuuu E CALUL MEUUUUU</em></AboutMenuText>
-          <AboutMenuText><em>biciclentiu calul meu iese din padure tagadam tagadam tagadam calul meuuuuu E CALUL MEUUUUU</em></AboutMenuText>
-          <AboutMenuText><em>biciclentiu calul meu iese din padure tagadam tagadam tagadam calul meuuuuu E CALUL MEUUUUU</em></AboutMenuText>
-          <AboutMenuText><em>biciclentiu calul meu iese din padure tagadam tagadam tagadam calul meuuuuu E CALUL MEUUUUU</em></AboutMenuText>
-          <AboutMenuText><em>biciclentiu calul meu iese din padure tagadam tagadam tagadam calul meuuuuu E CALUL MEUUUUU</em></AboutMenuText>
-          <AboutMenuText><em>biciclentiu calul meu iese din padure tagadam tagadam tagadam calul meuuuuu E CALUL MEUUUUU</em></AboutMenuText>
-          <AboutMenuText><em>biciclentiu calul meu iese din padure tagadam tagadam tagadam calul meuuuuu E CALUL MEUUUUU</em></AboutMenuText>
-          <AboutMenuText><em>biciclentiu calul meu iese din padure tagadam tagadam tagadam calul meuuuuu E CALUL MEUUUUU</em></AboutMenuText>
-          <AboutMenuText><em>biciclentiu calul meu iese din padure tagadam tagadam tagadam calul meuuuuu E CALUL MEUUUUU</em></AboutMenuText>
-          <AboutMenuText><em>biciclentiu calul meu iese din padure tagadam tagadam tagadam calul meuuuuu E CALUL MEUUUUU</em></AboutMenuText>
-          
-          <AboutMenuText><em>this is a text for test</em></AboutMenuText>
-          <AboutMenuText><em>this is a text for test</em></AboutMenuText>
+          <AboutMenuText><em>It said that this card game originated in <HighlightedLetter>France </HighlightedLetter>during the 1700', the cards initially were called "Vingt-et-Un".</em></AboutMenuText>
+          <AboutMenuText><em>The main goal of this game is to have a hand that totals higher than the <HighlightedLetter>dealer's </HighlightedLetter>one, but doesn't totals
+          grather than <HighlightedLetter>21</HighlightedLetter>.</em></AboutMenuText>
+          <AboutMenuText><HighlightedLetter>&#9827;&#9827;&#9827;&#9827; </HighlightedLetter>These are the cards!<HighlightedLetter> &#9827;&#9827;&#9827;&#9827;</HighlightedLetter></AboutMenuText>
+          <AboutMenuText><em>Cards from <HighlightedLetter>2 </HighlightedLetter>to <HighlightedLetter>10 </HighlightedLetter>are scored using the face values.</em></AboutMenuText>
+          <AboutMenuText><em><HighlightedLetter>Jacks</HighlightedLetter>, <HighlightedLetter>Queens </HighlightedLetter>and <HighlightedLetter>Kings</HighlightedLetter> are equal to <HighlightedLetter>10</HighlightedLetter>.</em></AboutMenuText>
+          <AboutMenuText><em><HighlightedLetter>Aces </HighlightedLetter>can be either <HighlightedLetter>1 </HighlightedLetter>or <HighlightedLetter>10</HighlightedLetter>. You can choose 
+          their value throughout the round if you have one of this card.</em></AboutMenuText>
+          <AboutMenuText><em>An <HighlightedLetter>Ace </HighlightedLetter> and one from the cards that scores <HighlightedLetter>10 </HighlightedLetter> are equl to <HighlightedLetter>21 </HighlightedLetter>and is 
+          known as <HighlightedLetter>Blackjack</HighlightedLetter>.</em></AboutMenuText>
+          <AboutMenuText><em>That's all, good luck! </em></AboutMenuText>
           <BackButtonFromSmallDevices variant="outlined" onClick={() => {
             setIsAboutMenuClicked(false);
             setIsAboutMenuActive(false);
