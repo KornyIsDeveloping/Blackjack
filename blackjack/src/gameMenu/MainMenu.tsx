@@ -1,5 +1,6 @@
 import React, { useState } from 'react' //react hook useState
 // import { CSSTransition } from 'react-transition-group';
+import SinglePlayerModal from './SinglePlayerModal';
 import { Button } from '@mui/material'
 import { styled } from '@mui/system'
 import './MainMenu.css';
@@ -579,14 +580,6 @@ type GameSubtitleProps = {
   small?: boolean
 };
 
-//defining the props for the in line menu that appears when singleplayer button is clicked
-// interface MainMenuProps {
-//   playerName?: string; //the question mark makes the properties optional
-//   setPlayerName: React.Dispatch<React.SetStateAction<string>>;
-//   handleStartGame: () => void;
-// }
-
-
 //creating the game title changing font in the rules and about menus
 const GameTitleForMenus = styled('h1')<GameTitleProps>(({ small }) => ({
   color: '#fde3a8',
@@ -607,6 +600,7 @@ const MainMenu: React.FC = () => {
   const [isRulesMenuActive, setIsRulesMenuActive] = useState(false); //toggle between rule menu tue/false for changing the title and subtitle size
   const [isAboutMenuClicked, setIsAboutMenuClicked] = useState(false);
   const [isAboutMenuActive, setIsAboutMenuActive] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); //determines whether the modal is open or not
 
   return (
     //renders the modal for singleplayer 
@@ -641,7 +635,8 @@ const MainMenu: React.FC = () => {
         //the menu that shows up after the play buttons is clicked
         <>
           <ButtonContainer>
-            <StyledMenuButtons variant="outlined">Singleplayer</StyledMenuButtons>
+            <StyledMenuButtons variant="outlined"onClick={() => setIsModalOpen(true)}>Singleplayer</StyledMenuButtons>
+            {isModalOpen && <SinglePlayerModal onClose={() => setIsModalOpen(false)} />}
             <ButtonWithTooltip variant="outlined">Multiplayer<Tooltip>Feature coming soon!</Tooltip></ButtonWithTooltip>
             {/* just switching between true or false value for setIsPlayMenuClicked */}
             <StyledMenuButtons variant="outlined" onClick={() => setIsPlayMenuClicked(false)}>Back</StyledMenuButtons>
