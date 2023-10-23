@@ -577,7 +577,15 @@ type GameTitleProps = {
 
 type GameSubtitleProps = {
   small?: boolean
-}
+};
+
+//defining the props for the in line menu that appears when singleplayer button is clicked
+// interface MainMenuProps {
+//   playerName?: string; //the question mark makes the properties optional
+//   setPlayerName: React.Dispatch<React.SetStateAction<string>>;
+//   handleStartGame: () => void;
+// }
+
 
 //creating the game title changing font in the rules and about menus
 const GameTitleForMenus = styled('h1')<GameTitleProps>(({ small }) => ({
@@ -600,8 +608,8 @@ const MainMenu: React.FC = () => {
   const [isAboutMenuClicked, setIsAboutMenuClicked] = useState(false);
   const [isAboutMenuActive, setIsAboutMenuActive] = useState(false);
 
-
   return (
+    //renders the modal for singleplayer 
     //my styled components GameMenu which holds the buttons, GameTitle and GameSubtitle
     <GameMenuContainer>
       {/* renders game title */}
@@ -668,17 +676,17 @@ const MainMenu: React.FC = () => {
         //display the about menu content and the back button
         <AboutContainer>
           <AboutMenuText>Hello there <HighlightedLetter>gambler</HighlightedLetter>, I'm Mr. Blacky, make yourself confortable and let me indroduce you to this card game named <HighlightedLetter>Blackjack </HighlightedLetter>,
-          as known as <HighlightedLetter>21'</HighlightedLetter>.</AboutMenuText>
+            as known as <HighlightedLetter>21'</HighlightedLetter>.</AboutMenuText>
           <AboutMenuText><em>It said that this card game originated in <HighlightedLetter>France </HighlightedLetter>during the 1700', the cards initially were called "Vingt-et-Un".</em></AboutMenuText>
           <AboutMenuText><em>The main goal of this game is to have a hand that totals higher than the <HighlightedLetter>dealer's </HighlightedLetter>one, but doesn't totals
-          grather than <HighlightedLetter>21</HighlightedLetter>.</em></AboutMenuText>
+            grather than <HighlightedLetter>21</HighlightedLetter>.</em></AboutMenuText>
           <AboutMenuText><HighlightedLetter>&#9827;&#9827;&#9827;&#9827; </HighlightedLetter>These are the cards!<HighlightedLetter> &#9827;&#9827;&#9827;&#9827;</HighlightedLetter></AboutMenuText>
           <AboutMenuText><em>Cards from <HighlightedLetter>2 </HighlightedLetter>to <HighlightedLetter>10 </HighlightedLetter>are scored using the face values.</em></AboutMenuText>
           <AboutMenuText><em><HighlightedLetter>Jacks</HighlightedLetter>, <HighlightedLetter>Queens </HighlightedLetter>and <HighlightedLetter>Kings</HighlightedLetter> are equal to <HighlightedLetter>10</HighlightedLetter>.</em></AboutMenuText>
-          <AboutMenuText><em><HighlightedLetter>Aces </HighlightedLetter>can be either <HighlightedLetter>1 </HighlightedLetter>or <HighlightedLetter>10</HighlightedLetter>. You can choose 
-          their value throughout the round if you have one of this card.</em></AboutMenuText>
-          <AboutMenuText><em>An <HighlightedLetter>Ace </HighlightedLetter> and one from the cards that scores <HighlightedLetter>10 </HighlightedLetter> are equl to <HighlightedLetter>21 </HighlightedLetter>and is 
-          known as <HighlightedLetter>Blackjack</HighlightedLetter>.</em></AboutMenuText>
+          <AboutMenuText><em><HighlightedLetter>Aces </HighlightedLetter>can be either <HighlightedLetter>1 </HighlightedLetter>or <HighlightedLetter>10</HighlightedLetter>. You can choose
+            their value throughout the round if you have one of this card.</em></AboutMenuText>
+          <AboutMenuText><em>An <HighlightedLetter>Ace </HighlightedLetter> and one from the cards that scores <HighlightedLetter>10 </HighlightedLetter> are equl to <HighlightedLetter>21 </HighlightedLetter>and is
+            known as <HighlightedLetter>Blackjack</HighlightedLetter>.</em></AboutMenuText>
           <AboutMenuText><em>That's all, good luck! </em></AboutMenuText>
           <BackButtonFromSmallDevices variant="outlined" onClick={() => {
             setIsAboutMenuClicked(false);
@@ -707,3 +715,5 @@ const MainMenu: React.FC = () => {
 }
 
 export default MainMenu;
+
+
