@@ -376,49 +376,39 @@ const RulesContainer = styled('div')({
     padding: '25px',
     maxHeight: '80vh',
     overflowY: 'auto',
-    '&::-webkit-scrollbar': {
-      width: '3px',
-    },
-    '&::-webkit-scrollbar-thumb': {
-      backgroundColor: '#fde3a8',
-      borderRadius: '4px',
-    },
-    '&::-webkit-scrollbar-track': {
-      backgroundColor: '#333',
-    }
   },
 
   //phone view
   '@media(min-width: 577px) and (max-width: 768px)': {
-    padding: '25px',
+    padding: '35px',
     maxHeight: '80vh',
     overflowY: 'auto'
   },
 
   //tablet view
   '@media(min-width: 769px) and (max-width: 993px)': {
-    padding: '25px',
+    padding: '45px',
     maxHeight: '80vh',
     overflowY: 'auto'
   },
 
   //desktop view
   '@media(min-width: 994px) and (max-width: 1200px)': {
-    padding: '25px',
+    padding: '55px',
     maxHeight: '80vh',
     overflowY: 'auto'
   },
 
   //large desktop view
   '@media (min-width: 1201px) and (max-width: 1400px)': {
-    padding: '25px',
+    padding: '55px',
     maxHeight: '80vh',
     overflowY: 'auto'
   },
 
   //extra lerge desktop view
   '@media (min-width: 1401px) and (max-width: 1900px)': {
-    padding: '25px',
+    padding: '55px',
     maxHeight: '80vh',
     overflowY: 'auto'
   }
@@ -527,7 +517,7 @@ const AboutMenuText = styled('p')({
     fontSize: '1.2rem',
     marginBottom: '15px',
     lineHeight: '1.5',
-    color: '#fde3a8'
+    color: '#fde3a8',
   },
 
   //phone view
@@ -680,6 +670,20 @@ const MainMenu: React.FC = () => {
       ) : isAboutMenuClicked ? (
         //display the about menu content and the back button
         <AboutContainer>
+          <AboutMenuText>Hello there <HighlightedLetter>gambler</HighlightedLetter>, I'm Mr. Blacky, make yourself confortable and let me indroduce you to this card game named <HighlightedLetter>Blackjack </HighlightedLetter>,
+          as known as <HighlightedLetter>21'</HighlightedLetter>.</AboutMenuText>
+          <AboutMenuText><em>biciclentiu calul meu iese din padure tagadam tagadam tagadam calul meuuuuu E CALUL MEUUUUU</em></AboutMenuText>
+          <AboutMenuText><em>biciclentiu calul meu iese din padure tagadam tagadam tagadam calul meuuuuu E CALUL MEUUUUU</em></AboutMenuText>
+          <AboutMenuText><em>biciclentiu calul meu iese din padure tagadam tagadam tagadam calul meuuuuu E CALUL MEUUUUU</em></AboutMenuText>
+          <AboutMenuText><em>biciclentiu calul meu iese din padure tagadam tagadam tagadam calul meuuuuu E CALUL MEUUUUU</em></AboutMenuText>
+          <AboutMenuText><em>biciclentiu calul meu iese din padure tagadam tagadam tagadam calul meuuuuu E CALUL MEUUUUU</em></AboutMenuText>
+          <AboutMenuText><em>biciclentiu calul meu iese din padure tagadam tagadam tagadam calul meuuuuu E CALUL MEUUUUU</em></AboutMenuText>
+          <AboutMenuText><em>biciclentiu calul meu iese din padure tagadam tagadam tagadam calul meuuuuu E CALUL MEUUUUU</em></AboutMenuText>
+          <AboutMenuText><em>biciclentiu calul meu iese din padure tagadam tagadam tagadam calul meuuuuu E CALUL MEUUUUU</em></AboutMenuText>
+          <AboutMenuText><em>biciclentiu calul meu iese din padure tagadam tagadam tagadam calul meuuuuu E CALUL MEUUUUU</em></AboutMenuText>
+          <AboutMenuText><em>biciclentiu calul meu iese din padure tagadam tagadam tagadam calul meuuuuu E CALUL MEUUUUU</em></AboutMenuText>
+          
+          <AboutMenuText><em>this is a text for test</em></AboutMenuText>
           <AboutMenuText><em>this is a text for test</em></AboutMenuText>
           <BackButtonFromSmallDevices variant="outlined" onClick={() => {
             setIsAboutMenuClicked(false);
