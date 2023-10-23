@@ -8,6 +8,41 @@
     <title>BlackJack</title>
   </head>
   <body>
+    <!-- creating the game board -->
+    <div id="gameSection" style="display: none;">
+      <!-- player information -->
+      <div id="playerInfo">
+          <span id="playerNameDisplay"></span>
+          <span id="playerBalance">Balance: $0</span>
+      </div>
+  
+      <!-- bet options and deal -->
+      <div id="bettingSection">
+          <label for="betInput">Bet Amount:</label>
+          <select id="betInput"></select>
+          <button id="dealButton">Deal</button>
+      </div>
+  
+      <!-- player's and dealer's cards -->
+      <div id="cardsSection">
+          <div id="dealerCards">Dealer's Cards:</div>
+          <div id="playerCards">Your Cards:</div>
+      </div>
+  
+      <!-- game actions -->
+      <div id="actionButtons">
+          <button id="hitButton">Hit</button>
+          <button id="stayButton">Stay</button>
+          <button id="standButton">Stand</button>
+      </div>
+  
+      <!-- game results and messages -->
+      <div id="gameMessages">
+          <span id="roundResults"></span>
+      </div>
+  </div>
+  
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
