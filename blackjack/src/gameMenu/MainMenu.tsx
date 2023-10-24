@@ -1,6 +1,7 @@
 import React, { useState } from 'react' //react hook useState
 // import { CSSTransition } from 'react-transition-group';
 import SinglePlayerModal from './SinglePlayerModal';
+import GameBoard from '../gameLogic/GameBoard'
 import { Button } from '@mui/material'
 import { styled } from '@mui/system'
 import './MainMenu.css';
@@ -602,10 +603,35 @@ const MainMenu: React.FC = () => {
   const [isAboutMenuActive, setIsAboutMenuActive] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false); //determines whether the modal is open or not
 
+
+  //test
+  const [isGameStarted, setIsGameStarted] = useState(false);
+  const [playerName, setPlayerName] = useState('');
+
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+  
+  const startGame = (playerName: string) => {
+    console.log(`Starting game with player: ${playerName}`);
+    setIsGameStarted(true); 
+    setIsModalOpen(false);
+  };
+
   return (
     //renders the modal for singleplayer 
     //my styled components GameMenu which holds the buttons, GameTitle and GameSubtitle
     <GameMenuContainer>
+      {/* renders the game board */}
+      {isGameStarted ? (
+      <GameBoard playerName={playerName} />
+    ) : (
+      <>
+        {/* render game title or any other UI here */}
+        {isModalOpen && <SinglePlayerModal onClose={closeModal} onStartGame={startGame} />}
+      </>
+    )}
       {/* renders game title */}
       {isRulesMenuActive || isAboutMenuActive ? (
         <GameTitleForMenus small={isRulesMenuActive || isAboutMenuActive}>

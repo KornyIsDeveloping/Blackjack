@@ -38,3 +38,4 @@ startButton.addEventListener("click", () => {
     console.log(`Welcome ${currentPlayer.name}!`);
 });
 
+

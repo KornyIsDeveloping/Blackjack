@@ -4,7 +4,12 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-const SinglePlayerModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+interface SinglePlayerModalProps {
+    onClose: () => void;
+    onStartGame?: (playerName: string) => void;
+}
+
+const SinglePlayerModal: React.FC<SinglePlayerModalProps> = ({ onClose, onStartGame }) => {
     const [playerName, setPlayerName] = useState(''); //this is the state for the player's name
 
     //implementing the start game logic on start button is clicked
@@ -58,16 +63,7 @@ const SinglePlayerModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                         fontSize: '1.4rem',
                         color: '#fde3a8'
                     },
-                    // '& input': {
-                    //     fontFamily: '"PT Sans Narrow", sans-serif',
-                    //     fontSize: '2.4rem',
-                    //     padding: '10px',
-                    //     border: '2px solid #fde3a8',
-                    //     borderRadius: '6px',
-                    //     margin: '20px 0',
-                    //     width: '100%',
-                    //     boxSizing: 'border-box'
-                    // },  
+
                     '& button': {
                         fontFamily: '"PT Sans Narrow", sans-serif',
                         fontSize: '2.4rem',
