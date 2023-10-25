@@ -1,11 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import BlackjackGame from './BlackJackGame.tsx'
-import './index.css'
-// import '@mui/material/styles';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './components/App/App.tsx';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <BlackjackGame />
-  </React.StrictMode>,
-)
+import './globals.scss';
+
+ReactDOM
+	.createRoot(document.getElementById('root')!)
+	.render(
+		<React.StrictMode>
+			<App />
+		</React.StrictMode>,
+	);

@@ -1,0 +1,192 @@
+openapi: 3.0.3
+info:
+  title: Blackjack API
+  description: This is an API that allows you to play blackjack.
+  version: 1.0.0
+paths:
+  /sit:
+    post:
+      summary: Sit at a table
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                balance:
+                  type: integer
+                  description: The amount of money you have to play with
+                  example: 1000
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+  /deal:
+    post:
+      summary: Deal a hand
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bet:
+                  type: integer
+                  description: The amount of money you want to bet
+                  example: 10
+                sessionId:
+                  type: string
+                  format: uuid
+                  description: The session ID
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  dealerCards:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Card'
+                  playerCards:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Card'
+                  roundEnded:
+                    type: boolean
+                    description: Whether the round has ended
+                    example: false
+                  winAmount:
+                    type: integer
+                    description: The amount of money you won
+                    example: 10
+                  currentBalance:
+                    type: integer
+                    description: The amount of money you have left
+                    example: 990
+  /turn:
+    post:
+      summary: Take a turn
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                  description: The action you want to take
+                  enum:
+                    - hit
+                    - stay
+                sessionId:
+                  type: string
+                  format: uuid
+                  description: The session ID
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  playerCard:
+                    $ref: '#/components/schemas/Card' # or null
+                  dealerCards:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Card'
+                  roundEnded:
+                    type: boolean
+                    description: Whether the round has ended
+                    example: false
+                  winAmount:
+                    type: integer
+                    description: The amount of money you won
+                    example: 10
+                  currentBalance:
+                    type: integer
+                    description: The amount of money you have left
+                    example: 990
+  /stand:
+    post:
+      summary: Stand
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sessionId:
+                  type: string
+                  format: uuid
+                  description: The session ID
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  roundsPlayed:
+                    type: integer
+                    description: The number of rounds you have played
+                    example: 1
+                  winAmount:
+                    type: integer
+                    description: The amount of money you won
+                    example: 10
+components:
+  schemas:
+    CardRank:
+      type: string
+      description: The rank of the card
+      enum:
+        - '2'
+        - '3'
+        - '4'
+        - '5'
+        - '6'
+        - '7'
+        - '8'
+        - '9'
+        - '10'
+        - 'J'
+        - 'Q'
+        - 'K'
+        - 'A'
+    CardSuite:
+      type: string
+      description: The suite of the card
+      enum:
+        - 'Clubs'
+        - 'Diamonds'
+        - 'Hearts'
+        - 'Spades'
+    Card:
+      type: object
+      properties:
+        rank:
+          $ref: '#/components/schemas/CardRank'
+        suite:
+          $ref: '#/components/schemas/CardSuite'
+    Session:
+      type: object
+      properties:
+        sessionId:
+          type: string
+          format: uuid
+          description: The session ID
+        availableBetOptions:
+          type: array
+          items:
+            type: integer
+            description: The amount of money you can bet
+            example: 10
