@@ -1,7 +1,8 @@
 import HL from "../Highlight/Highlight";
 import style from './style.module.scss'
 
-
+//defines a functional component named Title, which is the default export of this file
+//the component doesn't accept any props, as indicated by the empty curly braces { }.
 export default function Title({ }: TitleProps) {
 	return (
 		<div>

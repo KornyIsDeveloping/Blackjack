@@ -8,10 +8,11 @@ import { createPlayer } from "../../model/Player";
 import { getInt } from "../../utils/input";
 import style from './style.module.scss'
 
-
+//exporting a functional component that takes in back and playerName as props defined in GameBoardProps 
 export default function GameBoard({ back, playerName }: GameBoardProps) {
-	const [gameState, setGameState] = useState<Game | null>(null);
+	const [gameState, setGameState] = useState<Game | null>(null); //holds the state of the current game session, initially set to null
 
+	//game state checks
 	const canSit = !gameState?.player;
 	const canDeal = gameState && !gameState.started;
 	const canHit = gameState && gameState.started;
@@ -125,9 +126,7 @@ export default function GameBoard({ back, playerName }: GameBoardProps) {
 			}));
 	};
 
-	/**
-	 * Player leaves. Getting their stats.
-	 */
+	//Player leaves. Getting their stats
 	const stand = () => {
 		if(!gameState) return;
 		api
@@ -153,7 +152,7 @@ export default function GameBoard({ back, playerName }: GameBoardProps) {
 		if(gameState.player.balance <= 0) return;
 
 		const bettingOptions = gameState.bettingOptions;
-		// cannot bet more than balance
+		//cannot bet more than balance
 		const result = getInt(`Enter your bet [${bettingOptions.join(", ")}]:`, "10", undefined, gameState.player.balance, bettingOptions);
 		if(result === null) return;
 
@@ -187,7 +186,7 @@ export default function GameBoard({ back, playerName }: GameBoardProps) {
 			</div>
 
 			<button className="danger" data-area="exit" onClick={back}>Exit</button>
-
+			{/* setting up the different actions that the player can make during the game session */}
 			<div data-area="actions">
 				<button disabled={!canSit} onClick={sitClicked}>Sit</button>
 				<button disabled={!canDeal} onClick={dealClicked}>Deal</button>
@@ -203,9 +202,10 @@ export default function GameBoard({ back, playerName }: GameBoardProps) {
 
 		</div>
 	);
-}
+};
 
+//defines the props accepted by the GameBoard
 interface GameBoardProps {
 	back(): void;
 	playerName: string;
-}
+};

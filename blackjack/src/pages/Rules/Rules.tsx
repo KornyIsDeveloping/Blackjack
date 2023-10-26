@@ -6,6 +6,7 @@ import style from './style.module.scss'
 export default function Rules({ back }: RulesProps) {
 	return (
 		<div className={style.container}>
+			{/* this renders the rules of the game */}
 			<Subtitle />
 
 			<p>
@@ -56,6 +57,7 @@ export default function Rules({ back }: RulesProps) {
 	);
 }
 
+//the component receives 1 prop 
 interface RulesProps {
-	back(): void;
+	back(): void; //navigation purpose 
 }

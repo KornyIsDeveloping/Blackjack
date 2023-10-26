@@ -7,8 +7,8 @@ export default function Highlight({ children }: HighlightProps) {
 			{children}
 		</span>
 	);
-}
+};
 
 interface HighlightProps {
 	children: React.ReactNode;
-}
+};

@@ -2,7 +2,7 @@ import HL from "../../components/Highlight/Highlight";
 import Subtitle from "../../components/Subtitle/Subtitle";
 import style from './style.module.scss'
 
-
+//defines a functional component named About, it takes a prop back which is a function as defined in the AboutProps interface
 export default function About({ back }: AboutProps) {
 	return (
 		<div className={style.container}>
@@ -46,8 +46,9 @@ export default function About({ back }: AboutProps) {
 			<button onClick={back}>Back</button>
 		</div>
 	);
-}
+};
 
+//defines the props expected by the About component
 interface AboutProps {
 	back(): void;
-}
+};

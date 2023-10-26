@@ -5,16 +5,18 @@ import Title from "../../components/Title/Title";
 import style from './style.module.scss'
 
 export default function MainMenu({ setPage, startGame }: MainMenuProps) {
-	const [playMenuClicked, setPlayMenuClicked] = useState(false);
-	const [nameModalOpen, setNameModalOpen] = useState(false);
+	const [playMenuClicked, setPlayMenuClicked] = useState(false); //state variable that toggles between the main menu options and the play menu options
+	const [nameModalOpen, setNameModalOpen] = useState(false); //state variable that controls the visibility of the PlayerManeModal
 
 	return (
+		//rendering the buttons 
 		<div className={style.container}>
 			<Title />
 
 			<br />
 
 			<div className={style.buttonContainer}>
+				{/* this modal is conditionally rendered based on the state of nameModalOpen */}
 				{playMenuClicked ?
 					<>
 						<button onClick={() => setNameModalOpen(true)}>Single Player</button>
@@ -36,9 +38,10 @@ export default function MainMenu({ setPage, startGame }: MainMenuProps) {
 			{nameModalOpen && <PlayerNameModal onClose={() => setNameModalOpen(false)} onStartGame={startGame} />}
 		</div>
 	);
-}
+};
 
+//the component retreives 2 props
 interface MainMenuProps {
 	setPage(state: Page): void;
 	startGame(name: string): void;
-}
+};

@@ -1,7 +1,7 @@
 import HL from "../Highlight/Highlight";
 import style from './style.module.scss'
 
-
+//defines a functional component and exports it as the default export of the file the component does not destructure any props from SubtitleProps
 export default function Subtitle({ }: SubtitleProps) {
 	return (
 		<div>

@@ -1,3 +1,4 @@
+//describes a single playing card with its suit
 export interface Card {
 	suit: CardSuit;
 	rank: CardRank;
@@ -5,6 +6,7 @@ export interface Card {
 	value?: number;
 }
 
+//exporting an enumeration with the 4 standard card suits
 export enum CardSuit {
 	CLUBS = "Clubs",
 	DIAMONDS = "Diamonds",
@@ -12,11 +14,13 @@ export enum CardSuit {
 	SPADES = "Spades",
 }
 
+//exporting the colors for the card suits (red and black)
 export enum CardSuitColor {
 	BLACK = "Black",
 	RED = "Red",
 }
 
+//providing a mapping from each card suit to its corresponding color
 export const cardSuitColor: Record<CardSuit, CardSuitColor> = {
 	[CardSuit.CLUBS]: CardSuitColor.BLACK,
 	[CardSuit.DIAMONDS]: CardSuitColor.RED,
@@ -24,6 +28,7 @@ export const cardSuitColor: Record<CardSuit, CardSuitColor> = {
 	[CardSuit.SPADES]: CardSuitColor.BLACK,
 };
 
+//providing a mapping from each card suit to its corresponding symbol
 export const cardSuitSymbol: Record<CardSuit, string> = {
 	[CardSuit.CLUBS]: "♣",
 	[CardSuit.DIAMONDS]: "♦",
@@ -31,6 +36,7 @@ export const cardSuitSymbol: Record<CardSuit, string> = {
 	[CardSuit.SPADES]: "♠",
 };
 
+//enumeration of card ranks which includes values from ACE to KING
 export enum CardRank {
 	ACE = "A",
 	TWO = "2",
@@ -45,8 +51,9 @@ export enum CardRank {
 	JACK = "J",
 	QUEEN = "Q",
 	KING = "K",
-}
+};
 
+//providing a mapping from each card rank to its numeric value
 export const cardRankValue: Record<CardRank, number> = {
 	[CardRank.ACE]: 11,
 	[CardRank.TWO]: 2,
@@ -63,6 +70,7 @@ export const cardRankValue: Record<CardRank, number> = {
 	[CardRank.KING]: 10,
 };
 
+//returns a randomly choosen card, picks a random suit and rank and return a card object
 export const getRandomCard = (): Card => {
 	const randomSuit = Object.values(CardSuit)[Math.floor(Math.random() * Object.values(CardSuit).length)];
 	const randomRank = Object.values(CardRank)[Math.floor(Math.random() * Object.values(CardRank).length)];
