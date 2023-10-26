@@ -1,0 +1,65 @@
+@use "../../mixins";
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.buttonContainer {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 1rem;
+
+	@include mixins.smallPhone {
+		flex-direction: column;
+		gap: 1px;
+	}
+
+	@include mixins.phone {
+		flex-direction: column;
+		gap: 5px;
+	}
+
+	@include mixins.tablet {
+		gap: 15px;
+	}
+
+	@include mixins.desktop {
+		gap: 20px;
+	}
+
+	@include mixins.largeDesktop {
+		gap: 25px;
+	}
+
+	@include mixins.extraLargeDesktop {
+		gap: 30px;
+	}
+
+}
+
+.withTooltip {
+	position: relative;
+
+	&:hover>* {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+.tooltip {
+	visibility: hidden;
+	text-align: center;
+	padding: 4px 12px;
+	position: absolute;
+	top: 100%;
+	left: 35%;
+	margin-top: 10px;
+	margin-left: -60px;
+	opacity: 1;
+	transition: opacity 0.3s;
+}

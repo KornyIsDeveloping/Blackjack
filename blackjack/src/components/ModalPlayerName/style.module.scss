@@ -1,0 +1,59 @@
+@use "../../mixins";
+
+.box {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	background-color: #2d3e50;
+	border: 2px solid var(--border);
+	border-radius: 6px;
+	padding: 4rem 6rem;
+	width: 70%;
+
+	@include mixins.smallPhone {
+		width: 90%;
+	}
+
+	@include mixins.phone {
+		width: 75%;
+	}
+
+	@include mixins.tablet {
+		width: 70%;
+	}
+
+	@include mixins.desktop {
+		width: 70%;
+	}
+
+	@include mixins.largeDesktop {
+		width: 60%;
+	}
+
+	@include mixins.extraLargeDesktop {
+		width: 55%;
+	}
+
+	&>h3 {
+		font-size: 2.4rem;
+	}
+
+	&>h4 {
+		font-size: 1.4rem;
+	}
+
+	&>input {
+		padding: 10px;
+		width: 100%;
+		border: 2px solid var(--border);
+		border-radius: 6px;
+		font-style: oblique;
+		font-size: 16px;
+		background-color: var(--yellowish-2);
+		color: initial;
+	}
+
+	&>button {
+		width: 100%;
+	}
+}

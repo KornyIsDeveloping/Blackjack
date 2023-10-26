@@ -1,6 +1,6 @@
 import { Card, CardRank, cardSuitSymbol } from "../../model/Card";
+import style from './style.module.scss'
 
-import style from "./style.module.scss";
 
 export default function CardInfo({ card }: CardInfoProps) {
 	const symbol = cardSuitSymbol[card.suit];

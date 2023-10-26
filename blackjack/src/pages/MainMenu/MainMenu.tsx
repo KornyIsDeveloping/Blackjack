@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { Page } from "../../components/App/App";
 import PlayerNameModal from '../../components/ModalPlayerName/PlayerNameModal';
 import Title from "../../components/Title/Title";
-
-import style from "./style.module.scss";
+import style from './style.module.scss'
 
 export default function MainMenu({ setPage, startGame }: MainMenuProps) {
 	const [playMenuClicked, setPlayMenuClicked] = useState(false);

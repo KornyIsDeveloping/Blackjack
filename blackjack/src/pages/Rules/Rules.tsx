@@ -1,7 +1,7 @@
 import HL from "../../components/Highlight/Highlight";
 import Subtitle from "../../components/Subtitle/Subtitle";
+import style from './style.module.scss'
 
-import style from "./style.module.scss";
 
 export default function Rules({ back }: RulesProps) {
 	return (

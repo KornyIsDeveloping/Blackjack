@@ -1,14 +1,13 @@
 import { useState } from "react";
-
 import * as api from "../../api";
 import CardInfo from "../../components/InfoCard/CardInfo";
 import PlayerInfo from "../../components/InfoPlayer/PlayerInfo";
 import { getCardName } from "../../model/Card";
 import { Game, createGame } from "../../model/Game";
 import { createPlayer } from "../../model/Player";
-
 import { getInt } from "../../utils/input";
-import style from "./style.module.scss";
+import style from './style.module.scss'
+
 
 export default function GameBoard({ back, playerName }: GameBoardProps) {
 	const [gameState, setGameState] = useState<Game | null>(null);

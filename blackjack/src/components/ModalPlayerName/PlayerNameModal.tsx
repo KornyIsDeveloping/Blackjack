@@ -1,7 +1,8 @@
 import { useRef } from "react";
 import HL from "../Highlight/Highlight";
+import style from './style.module.scss'
 
-import style from './style.module.scss';
+
 
 export default function PlayerNameModal({ onClose, onStartGame }: PlayerNameModalProps) {
 	const inputRef = useRef<HTMLInputElement>(null);

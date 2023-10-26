@@ -1,6 +1,6 @@
 import HL from "../Highlight/Highlight";
+import style from './style.module.scss'
 
-import style from "./style.module.scss";
 
 export default function Subtitle({ }: SubtitleProps) {
 	return (

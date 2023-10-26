@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+	--yellowish: #fde3a8;
+	--yellowish-2: #fde6b1;
+	--yellowish-3: #6A716E;
+	--dark-blue: #2d3e50;
+	--dark-blue-2: #2C4154;
+	--red-brown: #96281b;
+	--grey: #6c726f;
+
+	--background: var(--dark-blue);
+	--text: var(--yellowish);
+	--border: var(--yellowish);
+	--accent: var(--red-brown);
+}
+
+* {
+	color: var(--text);
+	box-sizing: border-box;
+	font-family: 'PT Sans Narrow', sans-serif;
+}
+
+body {
+	background: var(--background);
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+#root {
+	height: 100%;
+
+	>* {
+		height: 100%;
+	}
+}
+
+p {
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+button {
+	background-color: transparent;
+
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: 500;
+
+	font-size: 1.25rem;
+	line-height: 1.75;
+	font-family: "Roboto", sans-serif;
+	outline: 0;
+
+	min-width: 64px;
+	width: 200px;
+	padding: 10px 30px;
+	border: solid 1px var(--border);
+
+	transition: background-color 0.1s linear;
+
+	&.danger {
+		color: var(--red-brown);
+		border-color: var(--red-brown);
+		font-weight: bold;
+	}
+
+	&:not(:disabled) {
+		&:hover {
+			background-color: #ffffff05;
+
+			&.danger {
+				background-color: #a52a2a10;
+			}
+		}
+
+		&:active {
+			background-color: #fde3a850;
+			position: relative;
+			top: 1px;
+
+			&.danger {
+				background-color: #a52a2a50;
+			}
+		}
+	}
+
+	&:disabled {
+		filter: grayscale(1) brightness(0.5);
+	}
+}
+
+dialog {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #00000050;
+	display: flex;
+	flex-direction: column;
+	border: 0;
+
+	>* {
+		margin: auto;
+	}
+}

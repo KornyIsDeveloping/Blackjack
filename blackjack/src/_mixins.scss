@@ -1,0 +1,45 @@
+@mixin highlighted() {
+	color: var(--red-brown);
+}
+
+@mixin uppercase() {
+	text-transform: uppercase;
+}
+
+////////////////////////////
+
+@mixin smallPhone() {
+	@media(min-width: 375px) and (max-width: 576px) {
+		@content;
+	}
+}
+
+@mixin phone() {
+	@media(min-width: 577px) and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin tablet() {
+	@media(min-width: 769px) and (max-width: 993px) {
+		@content;
+	}
+}
+
+@mixin desktop() {
+	@media(min-width: 994px) and (max-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin largeDesktop() {
+	@media(min-width: 1201px) and (max-width: 1400px) {
+		@content;
+	}
+}
+
+@mixin extraLargeDesktop() {
+	@media(min-width: 1401px) and (max-width: 1900px) {
+		@content;
+	}
+}

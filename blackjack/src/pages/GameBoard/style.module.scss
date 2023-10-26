@@ -1,0 +1,92 @@
+@mixin box {
+	border: solid 1px var(--border);
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+
+	&>h2 {
+		text-decoration: none;
+	}
+
+	&>ul {
+		overflow-y: auto;
+		flex: 1 1;
+	}
+}
+
+.container {
+	padding: 2rem;
+	display: grid;
+	grid-template-areas:
+		'title title title'
+		'dealer_cards dealer_cards logs'
+		'dealer_cards dealer_cards logs'
+		'player_cards player_cards logs'
+		'player_cards player_cards player-info'
+		'exit actions player-info';
+	grid-template-rows: auto 1fr 1fr 1fr 1fr auto;
+	grid-template-columns: auto 3fr 1fr;
+	gap: 1rem;
+
+	&>h1 {
+		grid-area: title;
+	}
+
+	&>div[data-area="dealer_cards"] {
+		grid-area: dealer_cards;
+		@include box;
+
+		&>ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 1rem;
+		}
+	}
+
+	&>div[data-area="player_cards"] {
+		grid-area: player_cards;
+		@include box;
+
+		&>ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 1rem;
+		}
+	}
+
+	&>div[data-area="logs"] {
+		grid-area: logs;
+		@include box;
+	}
+
+	&>button[data-area="exit"] {
+		grid-area: exit;
+	}
+
+	&>div[data-area="actions"] {
+		grid-area: actions;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 1rem;
+
+		>button {
+			width: auto;
+			flex: 1 1;
+		}
+	}
+
+	&>div[data-area="player-info"] {
+		grid-area: player-info;
+		@include box;
+	}
+}

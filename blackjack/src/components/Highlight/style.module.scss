@@ -1,0 +1,5 @@
+@use "../../mixins";
+
+.highlight {
+	@include mixins.highlighted();
+}
