@@ -132,9 +132,9 @@ export default function GameBoard({ back, playerName }: GameBoardProps) {
 		if(!gameState) return;
 		api
 			.stand({ sessionId: gameState.sessionId })
-			.then(({ roundsPlayed, winAmount }) => {
-				setGameState(null);
-			});
+			// .then(({ roundsPlayed, winAmount }) => {
+			// 	setGameState(null);
+			// });
 	};
 
 	const sitClicked = () => {
