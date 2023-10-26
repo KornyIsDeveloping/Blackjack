@@ -103,7 +103,7 @@ export default function GameBoard({ back, playerName }: GameBoardProps) {
 		if(!gameState) return;
 		api
 			.turnStay({ sessionId: gameState.sessionId, action: "stay" })
-			.then(({ currentBalance, dealerCards, playerCard, roundEnded, winAmount }) => setGameState({
+			.then(({ currentBalance, dealerCards, /*playerCard,*/ roundEnded, winAmount }) => setGameState({
 				...gameState,
 				player: {
 					...gameState.player,
