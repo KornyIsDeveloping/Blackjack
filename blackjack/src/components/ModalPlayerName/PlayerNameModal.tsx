@@ -26,7 +26,7 @@ export default function PlayerNameModal({ onClose, onStartGame }: PlayerNameModa
 			onClick={onClose}
 			onClose={onClose}>
 				{/* this div is the main content container of the dialog, also has a stopPropagation for avoiding
-				closing the modal if the player clicks inside of it instead of clicking on the button */}
+				closing the modal if the player clicks inside of it instead of clicking on the start button */}
 			<div className={style.box} onClick={e => e.stopPropagation()}>
 				<h3>Are you <HL>ready</HL>? Enter your name!</h3>
 				<h4><em>If you don't feel lucky, just click outside this pop-up to exist.</em></h4>
@@ -35,10 +35,10 @@ export default function PlayerNameModal({ onClose, onStartGame }: PlayerNameModa
 			</div>
 		</dialog>
 	);
-}
+};
 
-//as the other ones this defines the shape of the props that this interface accepts
+//as the other interfaces this defines the shape of the props that this interface accepts
 interface PlayerNameModalProps {
 	onClose: () => void;
 	onStartGame: (playerName: string) => void;
-}
+};

@@ -1,4 +1,4 @@
-//esporting the functional component and exports it as the default export of the file, this one does not destructure any props from BrtSectionProps
+//exporting the functional component as the default export of the file, this one does not destructure any props from BetSectionProps
 export default function BetSection({ }: BetSectionProps) {
 	return (
 		<div>
@@ -11,8 +11,8 @@ export default function BetSection({ }: BetSectionProps) {
 			<button>Deal</button>
 		</div>
 	);
-}
+};
 
 interface BetSectionProps {
 
-}
+};

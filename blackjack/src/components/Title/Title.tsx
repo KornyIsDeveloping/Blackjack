@@ -14,8 +14,8 @@ export default function Title({ }: TitleProps) {
 			</h2>
 		</div>
 	);
-}
+};
 
 interface TitleProps {
 
-}
+};

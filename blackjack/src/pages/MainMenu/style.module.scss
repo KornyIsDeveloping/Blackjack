@@ -16,12 +16,12 @@
 
 	@include mixins.smallPhone {
 		flex-direction: column;
-		gap: 1px;
+		gap: 35px;
 	}
 
 	@include mixins.phone {
 		flex-direction: column;
-		gap: 5px;
+		gap: 35px;
 	}
 
 	@include mixins.tablet {
@@ -58,7 +58,7 @@
 	position: absolute;
 	top: 100%;
 	left: 35%;
-	margin-top: 10px;
+	margin-top: 1px;
 	margin-left: -60px;
 	opacity: 1;
 	transition: opacity 0.3s;

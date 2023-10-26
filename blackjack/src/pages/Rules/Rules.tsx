@@ -55,9 +55,9 @@ export default function Rules({ back }: RulesProps) {
 			<button onClick={back}>Back</button>
 		</div>
 	);
-}
+};
 
 //the component receives 1 prop 
 interface RulesProps {
 	back(): void; //navigation purpose 
-}
+};

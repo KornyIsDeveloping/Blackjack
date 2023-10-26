@@ -1,3 +1,4 @@
+//this function is responssible to handle the input from the player and make some validation for the balance and bet options in game
 export function getInt(text: string, defaultValue?: string, min?: number, max?: number, options?: number[]): number | null {
 	while(true) {
 		const result = prompt(text, defaultValue);
@@ -21,5 +22,5 @@ export function getInt(text: string, defaultValue?: string, min?: number, max?: 
 			continue;
 		}
 		return parsed;
-	}
-}
+	};
+};

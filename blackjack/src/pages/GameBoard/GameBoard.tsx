@@ -21,7 +21,7 @@ export default function GameBoard({ back, playerName }: GameBoardProps) {
 
 	const separator = "=".repeat(20);
 
-	//initializes a new game. Player has money
+	//initializes a new game, player has money
 	const sit = (balance: number) => {
 		api
 			.sit({ balance })
@@ -37,7 +37,8 @@ export default function GameBoard({ back, playerName }: GameBoardProps) {
 			.then(game => setGameState(game));
 	};
 
-	//deal initial cards to people. Maybe someone got a blackjack and won already
+//I used the ... (the spread syntax) because they're allowing me to add or overwrite properties
+	//deal initial cards to people, maybe someone got a blackjack and won already
 	const deal = (bet: number) => {
 		if(!gameState) return;
 		api
